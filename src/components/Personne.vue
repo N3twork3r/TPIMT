@@ -1,40 +1,42 @@
 <template>
-  <div v-if="currentPersonne">
-            <div class= "form-group">
-              <label for="id">ID</label>
-               <input type="text" class="" id="id" 
-               v-model="currentPersonne.id"
-              />
-            </div>
-            <div class= "form-group">
-              <label for="id">Prénom</label>
-              <input type="text" class="" id="surname" 
-              v-model="currentPersonne.surname"
-              />
-            </div>
-            <div class= "form-group">
-              <label for="id">Nom</label>
-              <input type="text" class="" id="name" 
-              v-model="currentPersonne.name"
-              />
-            </div>
-            <div class= "form-group">
-              <label for="id">Téléphone</label>
-              <input type="text" class="" id="phone" 
-              v-model="currentPersonne.phone"
-              />
-            </div>
-            <div class= "form-group">
-              <label for="id">Ville</label>
-              <input type="text" class="" id="city" 
-              v-model="currentPersonne.city"
-              />
-            </div>
+  <div class="formulaire">
+     <div v-if="currentPersonne">
+        <div class="input-group">   
+            <span class="input-group-text" id="addon-wrapping">ID</span>
+            <input type="text" class="form-control" placeholder="Identifiant" aria-label="Username" aria-describedby="addon-wrapping" id="id" 
+                v-model="currentPersonne.id"/>
+        </div>
+        <div class="input-group">
+            <span class="input-group-text" id="addon-wrapping">Nom</span>
+            <input type="text" class="form-control" placeholder="Dupont" aria-label="Username" aria-describedby="addon-wrapping" id="surname" 
+              v-model="currentPersonne.name"/>
+        </div>
+        <div class="input-group">
+            <span class="input-group-text" id="addon-wrapping">Prenom</span>
+            <input type="text" class="form-control" placeholder="Jean" aria-label="Username" aria-describedby="addon-wrapping" id="name" 
+              v-model="currentPersonne.surname"/>
+        </div>
+        <div class="input-group">
+            <span class="input-group-text" id="addon-wrapping">Telephone</span>
+            <input type="text" class="form-control" placeholder="0XXXXXXXXX" aria-label="Username" aria-describedby="addon-wrapping" id="phone" 
+              v-model="currentPersonne.phone"/>
+        </div>
+        <div class="input-group">
+            <span class="input-group-text" id="addon-wrapping">Ville</span>
+            <input type="text" class="form-control" placeholder="Paris" aria-label="Username" aria-describedby="addon-wrapping" id="city" 
+              v-model="currentPersonne.city"/>
+        </div>
+    <a class="btn btn-warning" href="../" role="button">Annuler</a>
+    <button class="btn btn-danger" @click="deletePersonne"> Supprimer </button>
+    <button type="submit" class="btn btn-success" @click="updatePersonne"> Mettre à jour </button>
+
   </div>
-    <button class="badge badge-danger mr-2" @click="deletePersonne"> Supprimer </button>
-    <button type="submit" class="badge badge-success" @click="updatePersonne"> Mettre à jour </button>
-    <p>{{ message }}</p>
+
+
+<p>{{ message }}</p>
+
     
+ </div>
 </template>
 
 <script>
@@ -46,8 +48,9 @@ export default {
     return {
       currentPersonne: null,
       message: ''
-    };
-  },
+           };
+         },
+
   methods: {
     getPersonne(id) {
       PersonneDataService.get(id)
@@ -94,7 +97,7 @@ export default {
 </script>
 
 <style>
-.edit-form {
+.formulaire {
   max-width: 300px;
   margin: auto;
 }

@@ -1,7 +1,6 @@
 <template>
-  
   <ul>
-    <li class=""
+    <li class="listecomplette"
       :class="{ active: id == currentIndex }"
       v-for="(personne, id) in personnes"
       :key="id"
@@ -11,20 +10,19 @@
     </li>
   </ul>
 
-  <div v-if="currentPersonne"> <!-- si current pers existe dans ce cas là j'affiche ces valeur -->
+  <div v-if="currentPersonne"> <!-- si current pers existe dans ce cas là j'affiche ces valeurs -->
     {{ currentPersonne.name }}
     {{ currentPersonne.surname }}
     {{ currentPersonne.phone }}
     {{ currentPersonne.city }}
     
 
-    <router-link :to="'/personnes/' + currentPersonne.id" class="badge badge-warning">Modifier</router-link><!-- affiche le bouton modifier-->
+    <router-link :to="'/personnes/' + currentPersonne.id" class="badge badge-warning">Modifier</router-link>   <!-- affiche le bouton modifier-->
   </div>
   <div v-else>
     <br>
     <p>Cliquez sur une des personnes pour afficher les détails.</p>
   </div>
-
 </template>
 
 <script>
@@ -58,6 +56,7 @@ export default {
   },
   mounted() {
     this.getPersonnes();
-  }
+  },
 };
+
 </script>

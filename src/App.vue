@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <router-link to="/Personnes" class="navbar-brand">Front SpringBoot App</router-link><!-- balise routeur vers /Personnes -->
+      <router-link to="/Personnes" class="navbar-brand"> TP Front SpringBoot App Hamza</router-link><!-- balise routeur vers /Personnes -->
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link to="/Personnes" class="nav-link">Personnes</router-link><!-- balise routeur vers /Personnes -->
